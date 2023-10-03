@@ -113,7 +113,7 @@ class PrivateRecipeApiTests(TestCase):
         payload = {
             'title': 'Sample recipe',
             'time_minutes': 30,
-            "price": Decimal('5.99'),
+            'price': Decimal('5.99'),
         }
         res = self.client.post(RECIPES_URL, payload)
 
@@ -124,8 +124,8 @@ class PrivateRecipeApiTests(TestCase):
         self.assertEqual(recipe.user, self.user)
 
     def test_partial_update(self):
-        """test partial update of a recipe."""
-        original_link = 'https://example.com/recip/pdf'
+        """Test partial update of a recipe."""
+        original_link = 'https://example.com/recipe.pdf'
         recipe = create_recipe(
             user=self.user,
             title='Sample recipe title',
@@ -148,7 +148,7 @@ class PrivateRecipeApiTests(TestCase):
             user=self.user,
             title='Sample recipe title',
             link='https://example.com/new-recipe.pdf',
-            description='SSample recipe description.',
+            description='Sample recipe description.',
         )
 
         payload = {
