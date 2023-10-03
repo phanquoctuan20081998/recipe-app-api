@@ -16,6 +16,6 @@ router.register('recipes', views.RecipeViewSet)
 
 app_name = 'recipe'
 
-urlspatterns = [
+urlpatterns = [
     path('', include(router.urls)),
 ]
